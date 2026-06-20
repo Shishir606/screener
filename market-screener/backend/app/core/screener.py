@@ -62,8 +62,10 @@ def screen_candidates(fetched_data: list[dict]) -> list[dict]:
         #    else → "Small"
         market_cap = stock.get("market_cap") or 0      # safe None guard
         market_cap_cr = market_cap / 10_000_000        # use the safe variable
-
-        if market_cap_cr > 20_000:                     # compare the converted value
+        
+        if market_cap==0:
+            cap_category = "Unknown"
+        elif market_cap_cr > 20_000:                     # compare the converted value
             cap_category = "Large"
         elif market_cap_cr > 5_000:                    # compare the converted value
             cap_category = "Mid"
