@@ -11,7 +11,7 @@ import os
 import yfinance as yf
 
 
-SEMAPHORE_LIMIT = int(os.getenv("SEMAPHORE_LIMIT", "10"))
+SEMAPHORE_LIMIT = int(os.getenv("SEMAPHORE_LIMIT", "5"))
 
 
 async def _fetch_ticker(
